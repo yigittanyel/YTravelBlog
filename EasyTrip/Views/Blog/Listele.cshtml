@@ -1,0 +1,118 @@
+﻿@model  EasyTrip.Models.BlogYorum
+
+@{
+    ViewBag.Title = "Listele";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+    <link href="~/blogTema/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="~/blogTema/css/style.css" rel='stylesheet' type='text/css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Personal Blog Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!----webfonts---->
+    <link href='http://fonts.googleapis.com/css?family=Oswald:100,400,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,300italic' rel='stylesheet' type='text/css'>
+    <!----//webfonts---->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <!--end slider -->
+    <!--script-->
+    <script type="text/javascript" src="~/blogTema/js/move-top.js"></script>
+    <script type="text/javascript" src="~/blogTema/js/easing.js"></script>
+    <!--/script-->
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 900);
+            });
+        });
+    </script>
+    <!---->
+
+</head>
+<body>
+    <div class="single">
+        <div class="container">
+            <div class="col-md-8 single-main">
+                <div class="single-grid">
+                    @foreach (var x in Model.Deger1)
+                    {
+                        <a id="bas" style="text-decoration:none;" href="/Blog/BlogDetay/@x.BlogID"><h3 id="ree"> @x.Baslik</h3></a><br />
+                        <img src="@x.BlogImage" alt="" width=200px; height=370px; />
+                        <p style="font-weight:100; color:black; opacity:0.7;">@x.Aciklama.Substring(0, 30)... <a class="re" href="/Blog/BlogDetay/@x.BlogID/">(Devamını okuyun)</a></p>
+                    }
+
+                </div>
+                @*<ul class="comment-list">
+                        <h5 class="post-author_head">Written by <a href="#" title="Posts by admin" rel="author">admin</a></h5>
+                        <li>
+                            <img src="~/blogTema/images/avatar.png" class="img-responsive" alt="">
+                            <div class="desc">
+                                <p>View all posts by: <a href="#" title="Posts by admin" rel="author">admin</a></p>
+                            </div>
+                            <div class="clearfix"></div>
+                        </li>
+                    </ul>*@
+                @*<div class="content-form">
+                        <h3>Leave a comment</h3>
+                        <form>
+                            <input type="text" placeholder="Name" required />
+                            <input type="text" placeholder="Email" required />
+                            <input type="text" placeholder="Phone" required />
+                            <textarea placeholder="Message"></textarea>
+                            <input type="submit" value="SEND" />
+                        </form>
+                    </div>*@
+            </div>
+
+            <div class="col-md-4 side-content">
+                <div class="recent" id="nonstill">
+                    <h3>SON POSTLAR</h3>
+                    @foreach (var y in Model.Deger3)
+                    {
+                        <ul>
+                            <li><a href="/Blog/BlogDetay/@y.BlogID">@y.Baslik</a></li>                        
+                        </ul>
+                    }
+                    </div>
+                <div class="comments">
+                    <h3>SON YORUMLAR</h3>
+                    @foreach (var y in Model.Deger4)
+                    {
+                        <ul >
+                            @*<li><a href="/Blog/BlogDetay/@y.BlogID">@y.Blog.Baslik</a> konusunda <a href="/Blog/BlogDetay/@y.YorumlarID">@y.Yorum</a> adlı yorum</li>*@
+                            <li style="text-decoration:none;"><a href="/Blog/BlogDetay/@y.YorumlarID">@y.Kullanici</a> on <a href="/Blog/BlogDetay/@y.BlogID">@y.Blog.Baslik</a> </li>
+                        </ul>
+                    }
+                    </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <style>
+        a:hover {
+            font-size: 20px;
+            color: blue;
+            text-decoration: none;
+        }
+
+        .re:hover {
+            color: black;
+        }
+
+        #hee:hover {
+            font-size: 25px;
+        }
+    </style>
+</body>
+
+
+
+

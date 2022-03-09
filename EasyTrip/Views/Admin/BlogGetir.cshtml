@@ -1,0 +1,34 @@
+﻿@model  EasyTrip.Models.Blog
+@{
+    ViewBag.Title = "BlogGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<h2>Blog Bilgileri</h2>
+@using (Html.BeginForm("BlogGuncelle", "Admin", FormMethod.Post))
+{
+    <div class="padding:10px;">
+        @Html.HiddenFor(x => x.BlogID)
+        <div>
+            <label>Başlık: </label><br />
+            @Html.TextBoxFor(q => q.Baslik, new { @class = "form-control" })
+        </div>
+        <div>
+            <label>Tarih: </label><br />
+            @Html.TextBoxFor(q => q.Tarih, new { @class = "form-control" })
+        </div>
+        <div>
+            <label>Açıklama: </label><br />
+            @Html.TextAreaFor(q => q.Aciklama, new { @class = "form-control" })
+        </div>
+        <div>
+            <label>Blog Resmi </label><br />
+            @Html.TextBoxFor(q => q.BlogImage, new { @class = "form-control" })
+        </div>
+        <div style="margin-top:15px;">
+            <button class="btn btn-info">Güncelle</button>
+        </div>
+    </div>
+
+}

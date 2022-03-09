@@ -1,0 +1,41 @@
+﻿@using EasyTrip.Models
+@model List<Blog>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+<h2>Tüm Bloglar</h2>
+
+<a href="/Admin/YeniBlogEkle/" class="btn btn-success">Yeni Blog Ekle</a>
+<br />
+<br />
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">Başlık</th>
+            <th scope="col">Tarih</th>
+            <th scope="col">Açıklama</th>
+            <th scope="col">Resim Url</th>
+            <th scope="col">Detaylar</th>
+            <th scope="col">Sil</th>
+            <th scope="col">Güncelle</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model)
+        {
+        <tr>
+            <td>@x.Baslik</td>
+            <td>@x.Tarih.ToString("dd:MM:yyyy")</td>
+            <td>@x.Aciklama.Substring(0, 100)... </td>
+            <td>@x.BlogImage</td>
+            <td><input style="font-size:15px;" type="text" class="btn btn-success" value="Devamını oku" title="@x.Aciklama" /></td>
+            <td><a href="/Admin/BlogSil/@x.BlogID" class="btn btn-danger" onclick="return confirm('Silmek istediğinizden emin misiniz?');">Sil</a></td>
+            <td><a href="/Admin/BlogGetir/@x.BlogID" class="btn btn-primary">Güncelle</a></td>
+        </tr>
+        }
+    </tbody>
+</table>

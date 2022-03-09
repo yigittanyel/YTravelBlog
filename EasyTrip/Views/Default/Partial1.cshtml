@@ -1,0 +1,35 @@
+﻿@using EasyTrip.Models
+@model List<Blog>
+
+<div class="con-bot">
+    @foreach (var x in Model)
+    {
+        <div class="left">
+            <div class="bot-left">
+                <img src="@x.BlogImage" width="276px;" height="150px;" />
+            </div>
+            <div class="left-text">
+                <h4>@x.Baslik</h4>
+                <span class="doller" id="sp">@x.Tarih.ToString("dd:MM:yyyy")</span>
+                <p>@x.Aciklama.Substring(0, 50)...</p>
+                <p><a href="/Blog/BlogDetay/@x.BlogID"><span class="read">Devamını oku >></span></a></p>
+            </div>
+
+        </div>
+    }
+
+    @Html.Action("Partial2", "Default")
+       <div class="clear"></div>
+</div>
+ 
+<style>
+    #sp{
+        font-size:15px;
+    }
+</style>
+
+
+
+    @*
+</div>*@
+

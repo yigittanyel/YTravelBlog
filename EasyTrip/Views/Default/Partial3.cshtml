@@ -1,0 +1,17 @@
+﻿@using EasyTrip.Models
+@model List<Blog>
+
+
+<div class="padding">
+    <h4>Bunları da inceleyin:</h4>
+    <ul class="list list-pad">
+        @{ int i = 0;}
+        @foreach (var x in Model)
+        {
+            @*<li class="list-bg"><span>&#9658;</span><a href="/Blog/BlogDetay/@x.BlogID">@x.Baslik</a></li>*@
+            <li class="list-bg"><span>@{i++;}@i.</span><a href="/Blog/BlogDetay/@x.BlogID">@x.Baslik</a></li>
+
+
+        }
+    </ul>
+</div>

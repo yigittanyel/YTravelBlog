@@ -1,0 +1,38 @@
+﻿@model  EasyTrip.Models.Yorumlar
+
+@{
+    ViewBag.Title = "YorumGetir";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+
+<h2>Yorum Bilgileri</h2>
+@using (Html.BeginForm("YorumGuncelle", "Yorumlar", FormMethod.Post))
+{
+<div class="padding:10px;">
+    @Html.HiddenFor(x => x.YorumlarID)
+    <div>
+        <label>Blog ID </label><br />
+        @Html.TextBoxFor(q => q.BlogID, new { @class = "form-control", @readonly = "readonly" })
+    </div>
+    <div>
+        <label>Kullanıcı: </label><br />
+        @Html.TextBoxFor(q => q.Kullanici, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Mail: </label><br />
+        @Html.TextBoxFor(q => q.Mail, new { @class = "form-control" })
+    </div>
+    <div>
+        <label>Yorum: </label><br />
+        @Html.TextAreaFor(q => q.Yorum, new { @class = "form-control" })
+    </div>
+
+    <div style="margin-top:15px;">
+        <button class="btn btn-info">Güncelle</button>
+    </div>
+</div>
+
+}
+
