@@ -51,17 +51,22 @@
                     <p>Enter your details to login.</p>
                     @Html.BeginForm("GirisYap", "Login", FormMethod.Post)
                     {
-                    <label>Email Adresi</label>
+                    @*<label>Email Adresi</label>
                     <div class="input-group">
                         <span class="fa fa-envelope" aria-hidden="true"></span>
                         <input type="email" name="Kullanici" placeholder="E-Mail Adresinizi Giriniz..." required="">
+                    </div>*@
+                    <label>Email Adresi</label>
+                    <div class="input-group">
+                        <span class="fa fa-envelope" aria-hidden="true"></span>
+                        <input type="email" name="Kullanici" placeholder="E-Mail Adresinizi  giriniz..." required="">
                     </div>
                     <label>Şifre</label>
                     <div class="input-group">
                         <span class="fa fa-lock" aria-hidden="true"></span>
                         <input type="Password" name="Sifre" placeholder="Şifrenizi giriniz..." required="">
                     </div>
-                    <button class="btn btn-danger btn-block" type="submit">Giriş Yap</button>                  
+                    <button class="btn btn-danger btn-block" type="submit">Giriş Yap</button>
                 </div>
             </div>
             <!-- //main content -->
