@@ -1,5 +1,5 @@
 # YTravelBlog
-This is a travel blog created by 4 different themes.
+This is a travel blog created by 4 different themes.The project has crud operations and dynamic database created by entity framework code first approach.
 
 # Index Page
 ![p3](https://user-images.githubusercontent.com/61347219/158048200-a0f72007-b66d-4fb2-8f5e-ee4da011b8bc.png)
