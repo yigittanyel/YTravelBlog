@@ -1,4 +1,5 @@
-﻿
+﻿<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 <div class="content-form">
     <h3>Bir yorum yazınız: </h3>
     <form method="post">
@@ -7,5 +8,12 @@
         <input type="text" placeholder="Email: " name="Mail" required />
         <textarea placeholder="Yorumunuz: " name="Yorum"></textarea>
         <input type="submit" value="YORUMU GÖNDER" />
-      </form>
-  </div>
+    </form>
+</div>
+<script>
+    $(function () {
+        $("form").submit(function () {
+            alert("Yorumunuz alınmıştır.");
+        });
+    });
+</script>
